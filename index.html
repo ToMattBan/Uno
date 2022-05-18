@@ -23,7 +23,14 @@
         </div>
 
         <div class="div-game">
-            <button id=btn_start onclick="start_game()">Start!</button>
+            <div id="btn_start">
+                <button onclick="start_game()">Start!</button>
+            </div>
+
+            <ul id="table_cards" style="display: none;">
+                <li class="card card_color_null">DECK</li>
+                <li class="card"></li>
+            </ul>
 
             <ul id="my_cards"></ul>
         </div>

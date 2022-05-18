@@ -1,5 +1,3 @@
-hiddeBtnStart(true);
-
 // ---------------- Starting the app ---------------- //
 
 var game_started = false,
@@ -29,15 +27,23 @@ function start_game() {
 };
 
 function hiddeBtnStart(hidden) {
-    document.getElementById('btn_start').hidden = hidden;
+    document.querySelector('#btn_start').hidden = hidden;
+
+    if (hidden)
+        document.querySelector('#table_cards').style = "";
+    else
+        document.querySelector('#table_cards').style = "display: none";
 };
 
 function appendChild(ul, configs) {
     let li = document.createElement('li');
     li.appendChild(document.createTextNode(configs.text));
 
-    if (configs.style_class)
-        li.classList.add(configs.style_class);
+    if (configs.style_classes) {
+        configs.style_classes.forEach(classe => {
+            li.classList.add(classe);
+        })
+    }
 
     ul.appendChild(li);
 };
@@ -48,7 +54,7 @@ function addCards(hand) {
     hand.forEach(card => {
         let config = {
             text: card.name,
-            style_class: `card_color_${card.color}`
+            style_classes: ['card', `card_color_${card.color}`]
         };
 
         appendChild(game_hand, config)
