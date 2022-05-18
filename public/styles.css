@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+}
+
+.div-main {
+    display: flex;
+    width: 100%;
+}
+
+.massage-div {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.log {
+    border: solid 1px #000;
+    height: calc(100vh - 300px);
+    width: 300px;
+    overflow: auto;
+}
+
+.players {
+    border: solid 1px #000;
+    height: 300px;
+    width: 300px;
+    overflow: auto;
+}
+
+.div-game {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#my_cards {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    list-style: none;
+}
+
+#my_cards>li {
+    height: 100px;
+    width: 70px;
+    color: white;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#my_cards>li.card_color_blue {
+    background-color: blue;
+}
+#my_cards>li.card_color_yellow {
+    background-color: yellow;
+}
+#my_cards>li.card_color_green {
+    background-color: green;
+}
+#my_cards>li.card_color_red {
+    background-color: red;
+}
+#my_cards>li.card_color_null {
+    background-color: black;
+}

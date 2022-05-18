@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNO!</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+</head>
+<body>
+    
+    <div class="div-main">
+        <div class="massage-div">
+            <div class="players">
+                <p>PLAYERS</p>
+                <ul id=players></ul>
+            </div>
+        
+            <div class="log">
+                <p>LOG</p>
+                <ul id=log></ul>
+            </div>
+        </div>
+
+        <div class="div-game">
+            <button id=btn_start onclick="start_game()">Start!</button>
+
+            <ul id="my_cards"></ul>
+        </div>
+    </div>
+
+    <!--  importar o client do socketIO-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts.js"></script>
+</body>
+</html>
