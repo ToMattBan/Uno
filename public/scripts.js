@@ -27,12 +27,13 @@ function start_game() {
 };
 
 function hiddeBtnStart(hidden) {
-    document.querySelector('#btn_start').hidden = hidden;
-
-    if (hidden)
+    if (hidden) {
+        document.querySelector('#btn_start').style = "display: none";
         document.querySelector('#table_cards').style = "";
-    else
+    } else {
+        document.querySelector('#btn_start').style = "";
         document.querySelector('#table_cards').style = "display: none";
+    }
 };
 
 function appendChild(ul, configs) {
