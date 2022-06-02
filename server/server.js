@@ -1,14 +1,15 @@
 const express = require('express');
+const path = require('path');
 const app = express(); // Realiza o require do express, http, e socketio
 const http = require('http').Server(app); // passa o express para o http-server
 const io = require('socket.io')(http); // passa o http-server para o socketio
 const gameFunctions = require('./gameFunctions');
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // cria uma rota para fornecer o arquivo index.html
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // sempre que o socketio receber uma conexão vai devoltar realizar o broadcast dela
