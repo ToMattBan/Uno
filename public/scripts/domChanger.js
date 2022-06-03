@@ -1,17 +1,16 @@
 export default {
-  init: function (get_socket, set_game_started) {
+  init: function (gs) {
     var that = this;
 
     var btn_start = document.querySelector("#btn_start button");
     btn_start.addEventListener("click", function () {
-      set_game_started(true);
-      get_socket().emit("start_game");
+      gs.set_game_started(true);
+      gs.get_socket().emit("start_game");
       that.hiddeBtnStart(true);
     });
   },
 
   hiddeBtnStart: function (hidden) {
-    console.log('alô', hidden)
     if (hidden) {
       document.querySelector("#btn_start").style = "display: none";
       document.querySelector("#table_cards").style = "";
